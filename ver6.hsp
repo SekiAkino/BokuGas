@@ -1,0 +1,1024 @@
+#include "hsp3util.as"
+	//
+	;スクリーンサイズ。これによって自動的にテキストボックスのサイズが決まる
+	#packdir "data/1_ss.png"
+#packdir "data/7th.png"
+#packdir "data/7thED.txt"
+#packdir "data/OP.txt"
+#packdir "data/botan.png"
+#packdir "data/game_logo.png"
+#packdir "data/haikei.jpg"
+#packdir "data/icon.png"
+#packdir "data/iiya.png"
+#packdir "data/iiya1.txt"
+#packdir "data/iiya2.txt"
+#packdir "data/iiya3.txt"
+#packdir "data/iiya4.txt"
+#packdir "data/iiya5.txt"
+#packdir "data/iiya6.txt"
+#packdir "data/iiya7.txt"
+#packdir "data/iiyaED.txt"
+#packdir "data/iiya_sutiru.png"
+#packdir "data/itoha.png"
+#packdir "data/itoha1.txt"
+#packdir "data/itoha2.txt"
+#packdir "data/itoha3.txt"
+#packdir "data/itoha4.txt"
+#packdir "data/itoha5.txt"
+#packdir "data/itoha6.txt"
+#packdir "data/itoha7.txt"
+#packdir "data/itohaED.txt"
+#packdir "data/itoha_s.png"
+#packdir "data/koishi.png"
+#packdir "data/koishi1.txt"
+#packdir "data/koishi2.txt"
+#packdir "data/koishi3.txt"
+#packdir "data/koishi4.txt"
+#packdir "data/koishi5.txt"
+#packdir "data/koishi6.txt"
+#packdir "data/koishi7.txt"
+#packdir "data/koishiED.txt"
+#packdir "data/koishi_s.png"
+#packdir "data/mesbo.png"
+#packdir "data/miro.png"
+#packdir "data/miro1.txt"
+#packdir "data/miro2.txt"
+#packdir "data/miro3.txt"
+#packdir "data/miro4.txt"
+#packdir "data/miro5.txt"
+#packdir "data/miro6.txt"
+#packdir "data/miro7.txt"
+#packdir "data/miroED.txt"
+#packdir "data/miro_s.jpg"
+#packdir "data/niko.png"
+#packdir "data/niko1.txt"
+#packdir "data/niko2.txt"
+#packdir "data/niko3.txt"
+#packdir "data/niko4.txt"
+#packdir "data/niko5.txt"
+#packdir "data/niko6.txt"
+#packdir "data/niko7.txt"
+#packdir "data/nikoED.txt"
+#packdir "data/niko_sutiru.png"
+#packdir "data/null.png"
+#packdir "data/nullpo.png"
+#packdir "data/ten.png"
+#packdir "data/ten1.txt"
+#packdir "data/ten2.txt"
+#packdir "data/ten3.txt"
+#packdir "data/ten4.txt"
+#packdir "data/ten5.txt"
+#packdir "data/ten6.txt"
+#packdir "data/ten7.txt"
+#packdir "data/tenED.txt"
+#packdir "data/ten_sutiru.png"
+#packdir "data/test.txt"
+#packdir "data/title.jpg"
+#packdir "data/yatsuri.png"
+#packdir "data/yatsuri1.txt"
+#packdir "data/yatsuri2.txt"
+#packdir "data/yatsuri3.txt"
+#packdir "data/yatsuri4.txt"
+#packdir "data/yatsuri5.txt"
+#packdir "data/yatsuri6.txt"
+#packdir "data/yatsuri7.txt"
+#packdir "data/yatsuriED.txt"
+#packdir "data/yatsuri_s.png"
+
+	title "僕らは希ガスに溺れていく"
+	;素材の読み込み
+	celload "data/niko.png",1
+	celdiv 1,324,900
+	celload "data/ten.png",2
+	celdiv 2,283,900
+	celload "data/iiya.png",3
+	celdiv 3,247,900
+	celload "data/miro.png",4
+	celdiv 4,430,900
+	celload "data/koishi.png",5
+	celdiv 5,418,900
+	celload "data/yatsuri.png",6
+	celdiv 6,253,900
+	celload "data/itoha.png",7
+	celdiv 7,312,900
+	celload "data/haikei.jpg",8
+	celdiv 8,800,600
+	celload "data/null.png",9
+	mmload "data/OP.mp3",10,1
+	mmload "data/He.mp3",11,1
+	mmload "data/Ne.mp3",12,1
+	mmload "data/Ar.mp3",13,1
+	mmload "data/Kr.mp3",14,1
+	mmload "data/Xe.mp3",15,1
+	mmload "data/Rn.mp3",16,1
+	mmload "data/Og.mp3",17,1
+	mmload "data/select.mp3",18,1
+	mmload "data/nitizyou.mp3",19,1
+	mmload "data/metyo.mp3",20,1
+	mmload "data/BadEnding.mp3",21,1
+	mmload "data/tanoshii.mp3",22,1
+	mmload "data/goodnight.mp3",23,1
+	mmload "data/sewashi.mp3",24,1
+	mmload "data/daizi.mp3",25,1
+	mmload "data/shinken.mp3",26,1
+	mmload "data/deban.mp3",27,1
+	mmload "data/setsua.mp3",28,1
+	mmload "data/ED.mp3",29,1
+	celload "data/mesbo.png",30
+	celload "data/niko_sutiru.png",31
+	celdiv 31,800,600
+	celload "data/ten_sutiru.png",32
+	celdiv 32,800,600
+	celload "data/iiya_sutiru.png",33
+	celdiv 33,800,600
+	celload "data/miro_s.jpg",34
+	celdiv 34,800,600
+	celload "data/koishi_s.png",35
+	celdiv 35,800,600
+	celload "data/yatsuri_s.png",36
+	celdiv 36,800,600
+	celload "data/itoha_s.png",37
+	celdiv 37,800,600
+	celload "data/7th.png",38
+	celdiv 38,800,600
+	
+	celload "data/icon.png",40
+	celdiv 40,50,50
+	celload "data/botan.png",41
+
+	celload "data/title.jpg",43
+	celload "data/game_logo.png",44
+	celload "data/1_ss.png",45
+	
+	
+	celload "data/nullpo.png",39
+	celdiv 39,800,600
+
+	sx=800
+	sy=600
+
+	;最初に読み込む変数系
+	chara=1;表示するキャラ画像のフラグ
+	gazou=0;キャラ立ち絵を表示するかのフラグ
+	ind=0;最初は0行目を読み込むという命令
+	a=50;始まりのX
+	b=50;始まりのｙ
+	c=sy-150;終わりのＹ
+	d=sx-50;終わりのＸ
+	e=10;線の幅
+	f=120;メッセージボックスの幅
+	g=20;文字をずらす幅
+	back=1
+	music=0
+	pic=1
+	namae="貴";主人公の名前
+	count=0
+	date=0;日付のカウント
+	dim character,7
+	clear=0
+
+	screen 0,sx,sy
+
+	exist "namae"
+	if strsize=-1{
+		namae="貴";主人公の名前
+		goto *SAVE_st
+	}
+	exist "clear"
+	if strsize=-1{
+		clear=0
+		bsave "clear",clear
+	}
+	bload "namae",namae
+	bload "clear",clear
+
+	objsize 100,30
+	objimage 41
+	;デバッグ用
+
+	/*
+	character(0)=1
+	character(1)=1
+	character(2)=1
+	character(3)=1
+	character(4)=2
+	character(5)=1
+	character(6)=1
+
+	goto *start
+*/
+*OP
+	mmstop
+	mmplay 10
+	color 0,0,0
+	boxf 0,0,800,600
+	kosa=0
+	repeat 5
+		redraw 0
+			color 0,0,0
+			boxf 0,0,800,600
+			pos 50,200
+			gmode 4,,,kosa
+			celput 45
+			kosa=kosa+55
+			await 100
+		redraw 1
+	loop
+	await 1000
+	repeat 5
+		redraw 0
+			color 0,0,0
+			boxf 0,0,800,600
+			pos 50,200
+			gmode 4,,,kosa
+			celput 45
+			kosa=kosa-55
+			await 100
+		redraw 1
+	loop
+	
+	
+
+*hazime
+	cls
+	objsize 100,30
+	objimage 41
+	
+	color 0,0,0
+	boxf 0,0,800,600
+	pos 0,0
+	color 255,0,0
+	gmode 4,,,255
+	celput 43
+	pos 150,420
+	gmode 2
+	celput 44
+
+	pos 350,400
+	button "START",*name
+
+	stop
+
+*start
+	cls
+	objsize 100,30
+	objimage 41
+	mmstop
+	mmplay 18
+	color 0,0,0
+	boxf 0,0,800,600
+	gmode 4,,,100
+	pos 0,0
+	celput 8,2
+
+	;1日目
+	if date=1{
+		color 255,255,255
+		pos 0,0
+		mes "1日目　昼"
+		pos 550,20
+		button "稀気海水浴場",*niko_S
+		pos 420,550
+		button "稀気大学",*ten_S
+		pos 420,470
+		button "稀気図書館",*iiya_S
+		pos 150,200
+		button "稀気市庁舎",*miro_S
+		pos 300,20
+		button "稀気海岸",*koishi_S
+		pos 500,150
+		button "ネオン通り",*yatsuri_S
+		pos 550,550
+		button "稀気元素研究所",*itoha_S
+	}
+	if date=2{
+		color 255,255,255
+		pos 0,0
+		mes "1日目　夜"
+		pos 550,200
+		button "Bar Noble",*niko_s
+		pos 500,150
+		button "ネオン通り",*ten_S
+		pos 150,200
+		button "稀気市庁舎",*iiya_S
+		pos 300,20
+		button "稀気海岸",*miro_S
+		pos 550,550
+		button "稀気元素研究所",*koishi_S
+		pos 450,230
+		button "稀気ラジオ塔",*yatsuri_S
+		pos 420,550
+		button "稀気大学",*itoha_S
+	}
+	if date=3{
+		color 255,255,255
+		pos 0,0
+		mes "2日目　朝"
+		pos 500,150
+		button "ネオン通り",*niko_s
+		pos 150,200
+		button "稀気市庁舎",*ten_S
+		pos 420,470
+		button "稀気図書館",*iiya_S
+		pos 550,20
+		button "稀気海水浴場",*miro_S
+		pos 550,200
+		button "Bar Noble",*koishi_S
+		pos 550,550
+		button "稀気元素研究所",*yatsuri_S
+		pos 450,230
+		button "稀気ラジオ塔",*itoha_S
+	}
+	if date=4{
+		color 255,255,255
+		pos 0,0
+		mes "2日目　昼"
+		pos 150,200
+		button "稀気市庁舎",*niko_s
+		pos 550,20
+		button "稀気海水浴場",*ten_S
+		pos 420,550
+		button "稀気大学",*iiya_S
+		pos 300,20
+		button "稀気海岸",*miro_S
+		pos 420,470
+		button "稀気図書館",*koishi_S
+		pos 500,150
+		button "ネオン通り",*yatsuri_S
+		pos 550,550
+		button "稀気元素研究所",*itoha_S
+	}
+	if date=5{
+		color 255,255,255
+		pos 0,0
+		mes "2日目　夜"
+		pos 550,200
+		button "Bar Noble",*niko_s
+		pos 420,550
+		button "稀気大学",*ten_S
+		pos 450,230
+		button "稀気ラジオ塔",*iiya_S
+		pos 550,550
+		button "稀気元素研究所",*miro_S
+		pos 500,150
+		button "ネオン通り",*koishi_S
+		pos 300,20
+		button "稀気海岸",*yatsuri_S
+		pos 420,470
+		button "稀気図書館",*itoha_S
+	}
+	if date=6{
+		color 255,255,255
+		pos 0,0
+		mes "3日目　朝"
+		pos 550,200
+		button "Bar Noble",*niko_s
+		pos 420,550
+		button "稀気大学",*ten_S
+		pos 420,470
+		button "稀気図書館",*iiya_S
+		pos 500,150
+		button "ネオン通り",*miro_S
+		pos 300,20
+		button "稀気海岸",*koishi_S
+		pos 150,200
+		button "稀気市庁舎",*yatsuri_S
+		pos 550,550
+		button "稀気元素研究所",*itoha_S
+	}
+	if date=7{
+		color 255,255,255
+		pos 0,0
+		mes "3日目　昼"
+		pos 500,150
+		button "ネオン通り",*niko_s
+		pos 420,470
+		button "稀気図書館",*ten_S
+		pos 420,550
+		button "稀気大学",*iiya_S
+		pos 300,20
+		button "稀気海岸",*miro_S
+		pos 550,550
+		button "稀気元素研究所",*koishi_S
+		pos 450,230
+		button "稀気ラジオ塔",*yatsuri_S
+		pos 150,200
+		button "稀気市庁舎",*itoha_S
+	}
+	if date=8{
+		color 255,255,255
+		pos 0,0
+		mes "3日目　夜"
+		pos 420,470
+		button "稀気図書館",*ED_S
+	}
+
+	
+	stop
+
+*name
+	cls
+	color 0,0,0
+	boxf 0,0,sx,sy
+	objsize 100,30
+	pos sx/2-150,sy/2-100
+	color 255,255,255
+	mes "貴方の名前を教えてください（３文字まで）"
+	pos sx/2-50,sy/2-50
+	input namae,,,3
+	button "次へ",*SAVE
+	stop
+
+*SAVE
+	bsave "namae",namae
+	if clear=1:goto*skip
+	goto *LOAD
+*SAVE_st
+	bsave "namae",namae
+	goto *OP
+*skip
+	cls
+	color 0,0,0
+	boxf 0,0,sx,sy
+	objsize 100,30
+	pos sx/2-150,sy/2-100
+	color 255,255,255
+	mes "OPをスキップしますか？"
+	pos sx/2-50,sy/2-50
+	button "YES",*nextpage
+	button "NO",*LOAD
+	stop
+*niko_S
+	Cha="niko"
+	character(0)=character(0)+1
+	goto *LOAD
+*ten_S
+	Cha="ten"
+	character(1)=character(1)+1
+	goto *LOAD
+*iiya_S
+	Cha="iiya"
+	character(2)=character(2)+1
+	goto *LOAD
+*miro_S
+	Cha="miro"
+	character(3)=character(3)+1
+	goto *LOAD
+*koishi_S
+	Cha="koishi"
+	character(4)=character(4)+1
+	goto *LOAD
+*yatsuri_S
+	Cha="yatsuri"
+	character(5)=character(5)+1
+	goto *LOAD
+*itoha_S
+	Cha="itoha"
+	character(6)=character(6)+1
+	goto *LOAD
+*ED_S
+	if character(0)>3{
+		Cha="niko"
+		goto *LOAD_ED
+	}
+	if character(1)>3{
+		Cha="ten"
+		goto *LOAD_ED
+	}
+	if character(2)>3{
+		Cha="iiya"
+		goto *LOAD_ED
+	}
+	if character(3)>3{
+		Cha="miro"
+		goto *LOAD_ED
+	}
+	if character(4)>3{
+		Cha="koishi"
+		goto *LOAD_ED
+	}
+	if character(5)>3{
+		Cha="yatsuri"
+		goto *LOAD_ED
+	}
+	if character(6)>3{
+		Cha="itoha"
+		goto *LOAD_ED
+	}
+	if character(4)=3{
+		Cha="koishi"
+		goto *LOAD_ED
+	}
+	if character(5)=3{
+		Cha="yatsuri"
+		goto *LOAD_ED
+	}
+	if character(3)=3{
+		Cha="miro"
+		goto *LOAD_ED
+	}
+	if character(6)=3{
+		Cha="itoha"
+		goto *LOAD_ED
+	}
+	if character(2)=3{
+		Cha="iiya"
+		goto *LOAD_ED
+	}
+	if character(0)=3{
+		Cha="niko"
+		goto *LOAD_ED
+	}
+	if character(1)=3{
+		Cha="ten"
+		goto *LOAD_ED
+	}
+	if character(4)=2{
+		Cha="koishi"
+		goto *LOAD_ED
+	}
+	if character(5)=2{
+		Cha="yatsuri"
+		goto *LOAD_ED
+	}
+	if character(3)=2{
+		Cha="miro"
+		goto *LOAD_ED
+	}
+	if character(6)=2{
+		Cha="itoha"
+		goto *LOAD_ED
+	}
+	if character(2)=2{
+		Cha="iiya"
+		goto *LOAD_ED
+	}
+	if character(0)=2{
+		Cha="niko"
+		goto *LOAD_ED
+	}
+	if character(1)=2{
+		Cha="ten"
+		goto *LOAD_ED
+	}
+	
+	
+	goto *LOAD7th
+
+
+
+	
+*LOAD
+	cls
+	ind=0
+	back=1
+	ch=0;キャラ表示カウンター
+	gazou=0
+	sdim log // 追加
+	sdim txt
+	notesel txt
+	
+	;txtにテキストを読み込む準備
+	ind=0
+
+	if date>0:noteload "data/"+Cha+date+".txt"
+	if date=0:noteload "data/OP.txt"
+	
+;共通ロード
+*LOAD_c
+	font "ＭＳゴシック",15,1
+
+	text 70;テキストを80の速度で表示→テキスト速度の変更に対応可？
+	noteget log,ind
+	if instr(log,0,"＊")=0:goto *nextpic
+
+	;---------------------------------------基本ループここから------------------------------------
+*UI
+	redraw 0
+	color 0,0,0
+	boxf 0,0,sx,sy
+	gmode 4,,,100
+	pos 0,0
+	celput 8,backp;背景の表示
+	color 255,255,255
+	
+	gmode 2
+	pos 200,0
+	celput pict,hyo;キャラの表示
+
+	
+	
+	if musi>8{
+		mmstop
+		mmplay musi
+		musi=0
+	}
+	if musi=1{
+		mmstop
+	}
+	
+	
+	color 255,255,255
+	gmode 4,,,200 
+	pos a,c+e+e
+	gcopy 30,0,0,d-a,f
+	redraw 1
+
+	buffer 42,sx,sy
+	color 0,0,0
+	boxf 0,0,sx,sy
+	pos 0,0
+	gmode 4,,,100
+	celput 8,backp;背景の表示
+	color 255,255,255
+	gmode 4,,,200 
+	pos a,c+e+e
+	gcopy 30,0,0,d-a,f
+	gsel 0
+	
+	
+*texh
+	noteget log,ind
+	if instr(log,0,"＊")=0:goto *nextpic
+	k=notefind ("|",2);｜がエンド命令になっている。
+	if ind=k:goto *nextpage
+	strrep log,"＠","\n";テキスト中の＠を、改行に変更している。
+	strrep log,"＾",namae;テキスト中の＾を名前に変更
+	
+	color 255,255,255
+	POS a+e,c+e+e+g
+	EMES log;読み込んだテキストを一文字ずつ表示
+
+	;デバッグ用メッセージ
+	/*
+	color 255,255,255
+	pos 0,0
+	mes "キャラの番号"+pict
+	mes "表情の番号"+hyo
+	mes "背景の番号"+backp
+	mes "音楽の番号"+musi
+	*/
+	;ここまで
+	
+	gosub *supesu
+	ind=ind+1
+	goto *UI
+
+*supesu
+	repeat
+	redraw 0
+	color 0,0,3
+	gmode 4,,,255
+	pos	sx-150,sy-70
+	gcopy 42,sx-150,sy-70,50,50
+	gmode 2
+	celput 40,count
+	redraw 1
+	count=count+1
+	if count=10:count=0
+	
+	stick key
+	if key {
+		mci "play click2.wav"
+		break
+	}
+	wait 10
+	loop	
+	return
+
+;--------------------------------------------------基本ループここまで------------------------------------------------------
+*nextpic
+	strrep log,"＊　","";ここでコマンドを消してる
+	pic=strmid (log,0,1);logの1文字を取ってる
+	pict=int(pic)
+	hyou=strmid(log,2,1)
+	hyo=int(hyou)
+	back=strmid(log,4,1)
+	backp=int(back)
+	music=strmid(log,6,2)
+	musi=int(music)
+	ind=ind+1
+	goto *UI
+
+*nextpage
+	if date=8{
+		repeat 7
+			character(cnt)=0
+		loop
+		clear=1
+		date=0
+		bsave "clear",clear
+		goto *EDlole
+	}
+	date=date+1
+	goto *start
+
+
+;-------------------------------------ED演出ここから-------------------------------
+*LOAD_ED
+	cls
+	ind=0
+	back=0
+	ch=0;キャラ表示カウンター
+	gazou=0
+	sdim log // 追加
+	sdim txt
+	notesel txt
+
+	;txtにテキストを読み込む準備
+	ind=0
+
+	;テキストの読み込み
+	if date>0:noteload "data/"+Cha+"ED.txt"
+
+;共通ロード
+*LOAD_cED
+	font "ＭＳゴシック",15,1
+
+	text 70;テキストを80の速度で表示→テキスト速度の変更に対応可？
+	noteget log,ind
+	if instr(log,0,"＊")=0:goto *nextpicED
+
+	;---------------------------------------基本ループここから------------------------------------
+*UIED
+	redraw 0
+	color 0,0,0
+	boxf 0,0,sx,sy
+	gmode 2
+	pos 0,0
+	celput pict,hyo;背景の表示
+	color 255,255,255
+	
+
+	
+	if musi>8{
+		mmstop
+		mmplay musi
+		musi=0
+	}
+	if musi=1:mmstop
+	
+	
+	color 255,255,255
+	gmode 4,,,200 
+	pos a,c+e+e
+	gcopy 30,0,0,d-a,f
+	
+	redraw 1
+
+	buffer 42,sx,sy
+	color 0,0,0
+	boxf 0,0,sx,sy
+	pos 0,0
+	gmode 2
+	celput pict,hyo;背景の表示
+	color 255,255,255
+	gmode 4,,,200 
+	pos a,c+e+e
+	gcopy 30,0,0,d-a,f
+	gsel 0
+	
+*texhED
+	noteget log,ind
+	if instr(log,0,"＊")=0:goto *nextpicED
+	k=notefind ("|",2);｜がエンド命令になっている。
+	if ind=k:goto *nextpage
+	strrep log,"＠","\n";テキスト中の＠を、改行に変更している。
+	strrep log,"＾",namae;テキスト中の＾を名前に変更
+	
+	color 255,255,255
+	POS a+e,c+e+e+g
+	EMES log;読み込んだテキストを一文字ずつ表示
+
+	;デバッグ用メッセージ
+	/*
+	color 255,255,255
+	pos 0,0
+	mes "キャラの番号"+pict
+	mes "表情の番号"+hyo
+	mes "背景の番号"+backp
+	mes "音楽の番号"+musi
+*/
+	;ここまで
+	
+	gosub *supesu
+	ind=ind+1
+	goto *UIED
+
+
+
+;--------------------------------------------------基本ループここまで------------------------------------------------------
+*nextpicED
+	strrep log,"＊　","";ここでコマンドを消してる
+	pic=strmid (log,0,1);logの1文字を取ってる
+	pict=int(pic)
+	hyou=strmid(log,2,1)
+	hyo=int(hyou)
+	back=strmid(log,4,1)
+	backp=int(back)
+	music=strmid(log,6,2)
+	musi=int(music)
+	ind=ind+1
+	;スチルの人間切り替え
+	pict=pict+30
+	
+	goto *UIED
+
+*LOAD7th
+	cls
+	ind=0
+	back=0
+	ch=0;キャラ表示カウンター
+	gazou=0
+	sdim log // 追加
+	sdim txt
+	notesel txt
+
+	;txtにテキストを読み込む準備
+	ind=0
+
+	;テキストの読み込み
+	noteload "data/7thED.txt";てきすとをよみこむ
+	font "ＭＳゴシック",15,1
+
+	text 70;テキストを80の速度で表示→テキスト速度の変更に対応可？
+	noteget log,ind
+	if instr(log,0,"＊")=0:goto *nextpic7th
+
+	;---------------------------------------基本ループここから------------------------------------
+*UI7th
+	redraw 0
+	color 0,0,0
+	boxf 0,0,sx,sy
+	gmode 4,,,100
+	pos 0,0
+	celput 38,backp;背景の表示
+	color 255,255,255
+	
+	gmode 2
+	pos 200,0
+	celput pict,hyo;キャラの表示
+
+	
+	
+	if musi>8{
+		mmstop
+		mmplay musi
+		musi=0
+	}
+	if musi=1{
+		mmstop
+	}
+	
+	
+	color 255,255,255
+	gmode 4,,,200 
+	pos a,c+e+e
+	gcopy 30,0,0,d-a,f
+	redraw 1
+
+	buffer 42,sx,sy
+	color 0,0,0
+	boxf 0,0,sx,sy
+	pos 0,0
+	gmode 4,,,100
+	celput 38,backp;背景の表示
+	color 255,255,255
+	gmode 4,,,200 
+	pos a,c+e+e
+	gcopy 30,0,0,d-a,f
+	gsel 0
+	
+	
+*texh7th
+	noteget log,ind
+	if instr(log,0,"＊")=0:goto *nextpic7th
+	k=notefind ("|",2);｜がエンド命令になっている。
+	if ind=k:goto *nextpage
+	strrep log,"＠","\n";テキスト中の＠を、改行に変更している。
+	strrep log,"＾",namae;テキスト中の＾を名前に変更
+	
+	color 255,255,255
+	POS a+e,c+e+e+g
+	EMES log;読み込んだテキストを一文字ずつ表示
+
+	;デバッグ用メッセージ
+	/*
+	color 255,255,255
+	pos 0,0
+	mes "キャラの番号"+pict
+	mes "表情の番号"+hyo
+	mes "背景の番号"+backp
+	mes "音楽の番号"+musi
+	*/
+	;ここまで
+	
+	gosub *supesu
+	ind=ind+1
+	goto *UI7th
+
+*nextpic7th
+	strrep log,"＊　","";ここでコマンドを消してる
+	pic=strmid (log,0,1);logの1文字を取ってる
+	pict=int(pic)
+	hyou=strmid(log,2,1)
+	hyo=int(hyou)
+	back=strmid(log,4,1)
+	backp=int(back)
+	music=strmid(log,6,2)
+	musi=int(music)
+	ind=ind+1
+	goto *UI7th
+
+*EDlole
+	mmstop
+	mmplay 10
+	kosa=0
+	repeat 5
+		redraw 0
+			color 0,0,0
+			boxf 0,0,800,600
+			pos 150,200
+			gmode 4,,,kosa
+			celput 44
+			kosa=kosa+55
+			await 100
+		redraw 1
+	loop
+	await 1000
+	repeat 5
+		redraw 0
+			color 0,0,0
+			boxf 0,0,800,600
+			pos 150,200
+			gmode 4,,,kosa
+			celput 44
+			kosa=kosa-55
+			await 100
+		redraw 1
+	loop
+	color 0,0,0
+	boxf 0,0,800,600
+	pos 20,0
+	gmode 2
+	celput 1,3
+	pos 400,270
+	color 255,255,255
+	mes "イラスト：red"
+	wait 500
+	color 0,0,0
+	boxf 0,0,800,600
+	pos 20,0
+	gmode 2
+	celput 2,3
+	pos 400,270
+	color 255,255,255
+	mes "音楽：red"
+	wait 500
+	color 0,0,0
+	boxf 0,0,800,600
+	pos 20,0
+	gmode 2
+	celput 3,3
+	pos 400,270
+	color 255,255,255
+	mes "シナリオ：red"
+	wait 500
+	color 0,0,0
+	boxf 0,0,800,600
+	pos 20,0
+	gmode 2
+	celput 4,3
+	pos 400,270
+	color 255,255,255
+	mes "企画：red"
+	wait 500
+	color 0,0,0
+	boxf 0,0,800,600
+	pos 20,0
+	gmode 2
+	celput 5,3
+	pos 400,270
+	color 255,255,255
+	mes "プログラミング：red"
+	wait 500
+	color 0,0,0
+	boxf 0,0,800,600
+	pos 20,0
+	gmode 2
+	celput 6,3
+	pos 400,270
+	color 255,255,255
+	mes "希ガスを愛する全ての者へ"
+	wait 500
+	color 0,0,0
+	boxf 0,0,800,600
+	pos 20,0
+	gmode 2
+	celput 7,3
+	pos 400,270
+	color 255,255,255
+	mes "Thank you for playing!!"
+	wait 500
+	goto *hazime
+	
